@@ -1,0 +1,42 @@
+name: remittance
+description: A new Flutter project.
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Base
+  cupertino_icons: ^1.0.8
+  nb_utils: ^7.0.4
+  intl: ^0.19.0
+  flutter_vector_icons: ^2.0.0
+  google_fonts: ^6.2.1
+
+  # Banking
+  dots_indicator: ^3.0.0
+  flutter_svg: ^2.0.10+1
+
+  #State Management Technique
+  mobx: ^2.3.3+2
+  flutter_mobx: ^2.2.1+1
+  flutter_riverpod: ^2.6.1
+
+dependency_overrides:
+  intl: ^0.19.0
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mobx_codegen: ^2.6.1
+  build_runner: ^2.4.12
+  #flutter packages pub run build_runner build --delete-conflicting-outputs
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+
