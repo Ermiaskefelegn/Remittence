@@ -1,18 +1,18 @@
-// lib/data/models/transaction_model.dart
-class Transaction {
+// lib/domain/entities/transaction_entity.dart
+class TransactionEntity {
   final String transactionId;
   final String recipient;
+  final double amount;
   final String remark;
   final String accountNumber;
   final DateTime date;
-  final double amount;
 
-  Transaction({
+  TransactionEntity({
     required this.remark,
     required this.accountNumber,
     required this.transactionId,
     required this.recipient,
-    required this.date,
     required this.amount,
+    required this.date,
   });
 }

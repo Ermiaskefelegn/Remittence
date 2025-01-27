@@ -4,8 +4,7 @@ import 'package:remittance/core/utils/BankingColors.dart';
 import 'package:remittance/core/utils/BankingContants.dart';
 import 'package:remittance/core/utils/BankingStrings.dart';
 import 'package:remittance/core/utils/BankingWidget.dart';
-
-import '../../dashboard/dashboard_screen/BankingDashboard.dart';
+import 'package:remittance/presentation/features/dashboard/dashboard_screen/Dashboard.dart';
 
 class BankingForgotPwd extends StatefulWidget {
   static var tag = "/BankingForgotPwd";
@@ -70,7 +69,7 @@ class _BankingForgotPwdState extends State<BankingForgotPwd> {
                 BankingButton(
                   textContent: Banking_lbl_SignIn,
                   onPressed: () {
-                    BankingDashboard().launch(context);
+                    Dashboard().launch(context);
                   },
                 ).paddingOnly(
                   top: spacing_standard_new,

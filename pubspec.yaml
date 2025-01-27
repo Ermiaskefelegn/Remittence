@@ -21,8 +21,6 @@ dependencies:
   flutter_svg: ^2.0.10+1
 
   #State Management Technique
-  mobx: ^2.3.3+2
-  flutter_mobx: ^2.2.1+1
   flutter_riverpod: ^2.6.1
 
 dependency_overrides:

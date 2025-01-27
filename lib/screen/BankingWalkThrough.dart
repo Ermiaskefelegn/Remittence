@@ -1,5 +1,5 @@
 import 'package:remittance/main.dart';
-import 'package:remittance/presentation/features/authentication/auth_screen/BankingSignIn.dart';
+import 'package:remittance/presentation/features/authentication/auth_screen/sign_in.dart';
 import 'package:remittance/core/utils/BankingColors.dart';
 import 'package:remittance/core/utils/BankingContants.dart';
 import 'package:remittance/core/utils/BankingImages.dart';
@@ -119,7 +119,7 @@ class _BankingWalkThroughState extends State<BankingWalkThrough> {
                     textContent: Banking_lbl_Get_Started,
                     onPressed: () {
                       // finish(context);
-                      BankingSignIn().launch(context);
+                      RemSignIn().launch(context);
                     },
                   ),
                 ],
