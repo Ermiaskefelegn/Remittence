@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:remittance/core/utils/Colors.dart';
+import 'package:remittance/core/utils/Widget.dart';
 import 'package:remittance/domain/entities/account_entity.dart';
-import 'package:remittance/main.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:remittance/presentation/features/authentication/auth_provider.dart';
 import 'package:remittance/presentation/features/authentication/auth_screen/sign_in.dart';
-import 'package:remittance/core/utils/BankingColors.dart';
-import 'package:remittance/core/utils/BankingStrings.dart';
-import 'package:remittance/core/utils/BankingWidget.dart';
+import 'package:remittance/core/utils/Strings.dart';
+
+import '../../dashboard/dashboard_screen/providers/theme_provider.dart';
 
 class RemRegistration extends ConsumerStatefulWidget {
   static var tag = "/RemRegistration";
@@ -24,9 +25,11 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
   final TextEditingController passwordController = TextEditingController();
 
   @override
-  void initState() {
-    super.initState();
-    setStatusBarColor(appStore.isDarkModeOn ? black : white);
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Access the provider here
+    final isDarkModeOn = ref.watch(themeNotifierProvider).isDarkModeOn;
+    setStatusBarColor(isDarkModeOn ? black : white);
   }
 
   @override
@@ -36,7 +39,7 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
     emailController.dispose();
     phoneController.dispose();
     passwordController.dispose();
-    // setStatusBarColor(Banking_palColor);
+    // setStatusBarColor(palColor);
     super.dispose();
   }
 
@@ -44,9 +47,9 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Text(
-        Banking_lbl_app_Name.toUpperCase(),
+        lbl_app_Name.toUpperCase(),
         textAlign: TextAlign.center,
-        style: primaryTextStyle(size: 16, color: Banking_TextColorSecondary),
+        style: primaryTextStyle(size: 16, color: TextColorSecondary),
       ).paddingBottom(16),
       body: Container(
         padding: EdgeInsets.all(16),
@@ -57,7 +60,12 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Text(Banking_lbl_SignUp, style: boldTextStyle(size: 30)),
+              Text(lbl_SignUp,
+                  style: boldTextStyle(
+                      size: 30,
+                      color: ref.watch(themeNotifierProvider).isDarkModeOn
+                          ? whitePureColor
+                          : TextColorPrimary)),
               16.height,
               // First Name Input
               EditText(
@@ -102,7 +110,7 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
               16.height,
               // Sign Up Button
               BankingButton(
-                textContent: Banking_lbl_SignUp,
+                textContent: lbl_SignUp,
                 onPressed: () {
                   // Perform Registration
                   final authNotifier = ref.read(authStateProvider.notifier);
@@ -134,8 +142,8 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
                 children: [
                   Text(
                     already_have_an_account,
-                    style: primaryTextStyle(
-                        size: 16, color: Banking_TextColorSecondary),
+                    style:
+                        primaryTextStyle(size: 16, color: TextColorSecondary),
                   ),
                   16.height,
                   GestureDetector(
@@ -146,11 +154,11 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
                       );
                     },
                     child: Text(
-                      Banking_lbl_SignIn,
+                      lbl_SignIn,
                       style: primaryTextStyle(
                           weight: FontWeight.bold,
                           size: 16,
-                          color: Banking_blueLightColor),
+                          color: blueLightColor),
                     ),
                   ),
                 ],

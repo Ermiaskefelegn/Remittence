@@ -3,7 +3,7 @@ description: A new Flutter project.
 version: 1.0.0
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -23,6 +23,8 @@ dependencies:
   #State Management Technique
   flutter_riverpod: ^2.6.1
 
+  vector_math: any
+  http: any
 dependency_overrides:
   intl: ^0.19.0
   http: ^1.2.2
@@ -37,4 +39,3 @@ flutter:
   uses-material-design: true
   assets:
     - images/
-

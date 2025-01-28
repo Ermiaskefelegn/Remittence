@@ -1,0 +1,19 @@
+const lbl_app_Name = "Kacha Remittance";
+const lbl_app_Sub_title = "Mobile Banking App";
+const lbl_Walk1Title = "Online Payment";
+const lbl_Walk2Title = "Quickly Tranfer";
+const lbl_Walk3Title = "Calculate Currency";
+const lbl_Walk1SubTitle =
+    "Each payment process is so simple and hassle-free, and I don not need to be worried about being scammedEach Payment process is so simple and hassle-free";
+const lbl_Get_Started = "Get Started";
+const lbl_SignIn = "Sign In";
+const lbl_SignUp = "Sign Up";
+const lbl_Forgot = "Forgot?";
+const already_have_an_account = "Already Have an Account?";
+const dont_have_an_account = "Don't Have an Account?";
+const lbl_Home = "Home";
+const lbl_Transfer = "Transfer";
+const lbl_Payment = "Payment";
+const lbl_Saving = "Saving";
+const lbl_calculate = "Calculate";
+const lblDarkMode = "Change Theme";

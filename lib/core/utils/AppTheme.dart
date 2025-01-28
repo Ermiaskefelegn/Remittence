@@ -1,8 +1,8 @@
-import 'package:remittance/core/utils/BankingColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:remittance/core/utils/Colors.dart';
 
 class AppThemeData {
   //
@@ -49,12 +49,12 @@ class AppThemeData {
     highlightColor: appBackgroundColorDark,
     appBarTheme: AppBarTheme(
       color: appBackgroundColorDark,
-      iconTheme: IconThemeData(color: blackColor),
+      iconTheme: IconThemeData(color: bblackColor),
       systemOverlayStyle:
           SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
     ),
     primaryColor: color_primary_black,
-    dividerColor: Color(0xFFDADADA).withOpacity(0.3),
+    dividerColor: Color(0xFFDADADA).withValues(alpha: 0.3),
     primaryColorDark: color_primary_black,
     textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.white),
     hoverColor: Colors.black12,

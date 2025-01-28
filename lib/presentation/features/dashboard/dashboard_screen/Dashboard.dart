@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:remittance/presentation/features/dashboard/dashboard_screen/Home.dart';
-import 'package:remittance/presentation/features/dashboard/dashboard_screen/Menu.dart';
-import 'package:remittance/presentation/features/dashboard/dashboard_screen/Transfer.dart';
-import 'package:remittance/core/utils/BankingBottomNavigationBar.dart';
-import 'package:remittance/core/utils/BankingColors.dart';
-import 'package:remittance/core/utils/BankingImages.dart';
-import 'package:remittance/core/utils/BankingStrings.dart';
+import 'package:remittance/core/utils/Colors.dart';
+import 'package:remittance/core/utils/Images.dart';
+import 'package:remittance/core/utils/Strings.dart';
+import 'package:remittance/presentation/features/dashboard/dashboard_screen/Pages/Currency_calculator.dart';
+import 'package:remittance/presentation/features/dashboard/dashboard_screen/Pages/home.dart';
+import 'package:remittance/presentation/features/dashboard/dashboard_screen/Pages/transfer.dart';
+import 'package:remittance/core/utils/BottomNavigationBar.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class Dashboard extends StatefulWidget {
@@ -18,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
   var pages = [
     BankingHome1(),
     TransferPage(),
-    BankingMenu(),
+    CurrencyConverterScreen(),
   ];
 
   @override
@@ -43,20 +43,19 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BankingBottomNavigationBar(
-        selectedItemColor: Banking_Primary,
-        unselectedItemColor: Banking_greyColor.withValues(alpha: 0.5),
+        selectedItemColor: Primary,
+        unselectedItemColor: greyColor.withValues(alpha: 0.5),
         items: <BankingBottomNavigationBarItem>[
+          BankingBottomNavigationBarItem(icon: ic_Home, title: Text(lbl_Home)),
           BankingBottomNavigationBarItem(
-              icon: Banking_ic_Home, title: Text(Banking_lbl_Home)),
+              icon: ic_Transfer, title: Text(lbl_Transfer)),
           BankingBottomNavigationBarItem(
-              icon: Banking_ic_Transfer, title: Text(Banking_lbl_Transfer)),
-          BankingBottomNavigationBarItem(
-              icon: Banking_ic_Menu, title: Text(Banking_lbl_Profile)),
+              icon: ic_Saving, title: Text(lbl_calculate)),
         ],
         currentIndex: selectedIndex,
-        unselectedIconTheme: IconThemeData(
-            color: Banking_greyColor.withValues(alpha: 0.5), size: 28),
-        selectedIconTheme: IconThemeData(color: Banking_Primary, size: 28),
+        unselectedIconTheme:
+            IconThemeData(color: greyColor.withValues(alpha: 0.5), size: 28),
+        selectedIconTheme: IconThemeData(color: Primary, size: 28),
         onTap: _onItemTapped,
         type: BankingBottomNavigationBarType.fixed,
       ),
