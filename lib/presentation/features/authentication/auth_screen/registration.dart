@@ -109,7 +109,7 @@ class _RemRegistrationState extends ConsumerState<RemRegistration> {
               ),
               16.height,
               // Sign Up Button
-              BankingButton(
+              CustomButton(
                 textContent: lbl_SignUp,
                 onPressed: () {
                   // Perform Registration

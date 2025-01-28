@@ -6,15 +6,15 @@ import 'package:remittance/core/utils/Contants.dart';
 import 'package:remittance/presentation/features/dashboard/dashboard_screen/providers/theme_provider.dart';
 
 // ignore: must_be_immutable
-class BankingButton extends ConsumerStatefulWidget {
-  static String tag = '/BankingButton';
+class CustomButton extends ConsumerStatefulWidget {
+  static String tag = '/CustomButton';
   var textContent;
   VoidCallback onPressed;
   var isStroked = false;
   var height = 50.0;
   var radius = 5.0;
 
-  BankingButton(
+  CustomButton(
       {required this.textContent,
       required this.onPressed,
       this.isStroked = false,
@@ -22,10 +22,10 @@ class BankingButton extends ConsumerStatefulWidget {
       this.radius = 5.0});
 
   @override
-  BankingButtonState createState() => BankingButtonState();
+  CustomButtonState createState() => CustomButtonState();
 }
 
-class BankingButtonState extends ConsumerState<BankingButton> {
+class CustomButtonState extends ConsumerState<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -50,24 +50,6 @@ class BankingButtonState extends ConsumerState<BankingButton> {
       ),
     );
   }
-}
-
-Widget bankingOption(var icon, var heading, Color color) {
-  return Container(
-    padding: EdgeInsets.fromLTRB(8, 10, 8, 10),
-    child: Row(
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            Image.asset(icon, color: color, height: 20, width: 20),
-            16.width,
-            Text(heading, style: primaryTextStyle()),
-          ],
-        ).expand(),
-        Icon(Icons.keyboard_arrow_right, color: TextColorSecondary),
-      ],
-    ),
-  );
 }
 
 class TopCard extends ConsumerWidget {

@@ -115,7 +115,7 @@ class _OnBoardingState extends ConsumerState<OnBoarding> {
                   ),
                   50.height,
                   // Adding Button
-                  BankingButton(
+                  CustomButton(
                     textContent: lbl_Get_Started,
                     onPressed: () {
                       // finish(context);

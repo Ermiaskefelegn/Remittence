@@ -89,7 +89,7 @@ class _RemSignInState extends ConsumerState<RemSignIn> {
               ),
               16.height,
               // Sign In Button
-              BankingButton(
+              CustomButton(
                 textContent: lbl_SignIn,
                 onPressed: () {
                   // Perform Login

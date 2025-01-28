@@ -84,7 +84,7 @@ class _TransferPageState extends ConsumerState<TransferPage> {
               ),
               SizedBox(height: 16),
               // Transfer Button
-              BankingButton(
+              CustomButton(
                 textContent: "Transfer",
                 onPressed: () {
                   // Validate Input
